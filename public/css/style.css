@@ -1,0 +1,61 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+:root {
+  --mainBgColor: #eff5fe;
+}
+* {
+  padding: 0;
+  margin: 0;
+}
+body {
+  font-family: "Montserrat", sans-serif;
+  background: #eff5fe;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.dropZone {
+  width: 60vw;
+  min-height: 45vh;
+  border: 2px dashed #288d;
+  margin: 1.5rem;
+  border-radius: 0.6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-weight: 600;
+}
+.uploadContainer {
+  background: #fff;
+  border-radius: 1.5rem;
+  box-shadow: 0 20px 20px #0000002e;
+}
+.iconContainer {
+  width: 4.8rem;
+  height: 6rem;
+  position: relative;
+}
+.iconContainer img {
+  width: 4.8rem;
+  position: absolute;
+  transition: transform 0.3s ease-in-out;
+}
+.iconContainer .center {
+  z-index: 2;
+}
+.dragged .iconContainer .right {
+  transform: rotate(10deg) translateX(20px) scale(0.9);
+  transform-origin: bottom;
+}
+.dragged .iconContainer .left {
+  transform: rotate(-10deg) translateX(-20px) scale(0.9);
+  transform-origin: bottom;
+}
+.iconContainer .right,
+.iconContainer .left {
+  filter: grayscale(0.5);
+}
+.dragged .iconContainer .center {
+  transform: translateY(-5px);
+}

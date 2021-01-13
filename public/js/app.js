@@ -167,8 +167,10 @@ let toastTimer;
 const showToast = (msg) => {
   clearTimeout(toastTimer);
   toast.innerText = msg;
+  toast.style.display = "block";
   toast.classList.add("show");
   toastTimer = setTimeout(() => {
     toast.classList.remove("show");
-  }, 2000);
+    toast.style.display = "none";
+  }, 4000);
 };

@@ -1,62 +1,74 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 :root {
-  --main-bg-color: #edf5fe;
-  --light-blue: #03a9f4;
-  --border-color: #0288d147;
-  --container-width: 500px;
+  --main-bg-color: #f3f169;
+  --light-blue: #46c3db;
+  --border-color: #2d6cdf;
+  --container-width: 40vw;
 }
-
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+}
 body {
-  font-family: system-ui;
   background: var(--main-bg-color);
   height: 98vh;
-  overflow: hidden;
-}
 
+  display: flex;
+
+  justify-content: center;
+  user-select: none;
+}
 .logo {
   position: absolute;
-  top: 10px;
-  left: 10px;
-  width: 150px;
-}
-
-.image-vector {
-  width: 50vw;
-  height: 50vh;
-  background: url(/undraw-upload.svg) no-repeat center;
-  background-size: contain;
+  top: 3vh;
+  left: 3vw;
+  width: 15vw;
 }
 
 body,
 .upload-container,
 .drop-zone {
   display: flex;
-  align-items: center;
+
   justify-content: center;
 }
 .upload-container,
 .drop-zone {
   flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .upload-container {
   background: #ffffff;
   border-radius: 25px;
+  width: 60vw;
+  position: relative;
+  top: 20vh;
+  margin: 10vh;
   box-shadow: 0px 20px 20px 0px #00000017;
 }
 
 .drop-zone {
   width: var(--container-width);
-  min-height: 200px;
+
   border: 2px dashed var(--border-color);
   border-radius: 10px;
-  margin: 30px;
+  height: 40vh;
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+  width: 52vw;
+  margin-left: 4vw;
+  margin-right: 4vw;
   transition: 0.2s all ease-in;
 }
 
 /* will be added when user drags */
 .drop-zone.dragged {
   background: var(--main-bg-color);
-  border-color: #0288d1;
+  border-color: #482ff7;
 }
 
 .drop-zone input {
@@ -96,11 +108,11 @@ body,
 }
 
 .title {
-  font-size: large;
+  font-weight: 600;
 }
 
 #browseBtn {
-  color: #2196f3;
+  color: #482ff7;
   cursor: pointer;
 }
 
@@ -143,7 +155,7 @@ body,
   width: 100%;
   height: 3px;
   border-radius: 2px;
-  background: #03a9f4;
+  background: #482ff7;
   transition: transform 200ms linear;
   transform: scaleX(0);
   transform-origin: left;
@@ -197,7 +209,7 @@ body,
 
 .email-container form {
   border: 2px solid var(--border-color);
-  width: 100%;
+  width: 48vw;
   padding: 15px;
   box-sizing: border-box;
   border-radius: 10px;
@@ -213,14 +225,17 @@ body,
 }
 .email-container label {
   margin: 5px;
-  font-size: 18px;
+  font-size: 14px;
+  font-weight: 600;
 }
 
 .email-container input {
   border: none;
   border-bottom: 2px solid var(--border-color);
   height: 19px;
-  font-size: 18px;
+  margin-left: 0.5rem;
+  width: 25vw;
+  font-size: 14px;
   text-align: center;
 }
 
@@ -231,16 +246,17 @@ body,
 .email-container .filed {
   margin-bottom: 5px;
   display: flex;
-  justify-content: space-between;
-  width: 400px;
+  justify-content: center;
+  width: 47vw;
 }
 
 .send-btn-container button {
-  font-size: 18px;
+  font-size: 14px;
   padding: 8px 40px;
   margin-top: 15px;
   background: var(--main-bg-color);
   border: none;
+  font-weight: 600;
   border-radius: 5px;
   color: #607d8b;
   cursor: pointer;
@@ -248,13 +264,15 @@ body,
 
 .toast {
   position: absolute;
-  bottom: 10px;
+  bottom: 2vh;
   right: 50%;
   transform: translate(50%, 60px);
   padding: 10px 20px;
   background: var(--light-blue);
   color: #fff;
   border-radius: 5px;
+  margin-top: 10vh;
+  display: none;
   font-size: 18px;
   box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1),
     0px 4px 6px -2px rgba(0, 0, 0, 0.05);
@@ -264,18 +282,18 @@ body,
 .show.toast {
   transform: translate(50%, 0);
 }
-
-@media screen and (max-width: 900px) {
+@media (min-width: 768px) {
   :root {
-    --container-width: 320px;
+    font-size: calc(1rem + ((1rem - 7.68px) * 0.6944));
+    min-height: 0vw;
   }
-  .image-vector {
-    display: none;
+}
+@media (min-width: 1920px) {
+  :root {
+    font-size: 24px;
   }
-  .email-container .filed {
-    flex-direction: column;
-  }
-  .email-container .filed {
-    width: 300px;
-  }
+}
+.toast a {
+  text-decoration: none;
+  color: #fff;
 }

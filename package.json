@@ -1,6 +1,6 @@
 {
   "name": "file-sharing",
-  "version": "0.0.0",
+  "version": "14.15.1",
   "server": false,
   "private": true,
   "scripts": {

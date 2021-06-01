@@ -4,26 +4,38 @@
     <meta charset="UTF-8" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>fileShare</title>
+    <title>cloudShare</title>
     <link rel="stylesheet" href="/css/style.css" />
   </head>
 
   <body>
-    <h1>fileShare</h1>
-    <section class="download">
-      <% if(locals.error){ %>
-      <h4><%= locals.error %></h4>
-      <% } else { %>
-      <h2>Your file is ready to download</h2>
-      <p>Link expires in 1 hour</p>
-      <div class="download__meta">
-        <h4><%= fileName %></h4>
-        <small><%= parseInt(fileSize/1024) %> KB</small>
+    <div class="body">
+      <div class="blob1">
+        <img src="/images/blob1.svg" alt="" />
       </div>
-      <div class="send-btn-container">
-        <a href="<%= downloadLink %>">Download file</a>
+      <div class="blob2"><img src="/images/blob2.svg" alt="" /></div>
+      <div class="blob3"><img src="/images/blob3.svg" alt="" /></div>
+      <div class="blob4"><img src="/images/blob4.svg" alt="" /></div>
+      <div class="container">
+        <div class="title"><p class="">cloudShare</p></div>
+        <section class="download">
+          <% if(locals.error){ %>
+          <h4 style="margin-bottom: 1rem"><%= locals.error %></h4>
+          <% } else { %>
+          <h2 style="margin-bottom: 2rem" ;>Your file is ready to download</h2>
+          <p>Link expires in 1 hour</p>
+          <div class="download__meta">
+            <h3 class="filename" style="text-align: center"><%= fileName %></h3>
+            <p class="filesize" style="text-align: center"></p>
+              <%= parseInt(fileSize/1024) %> KB
+            </p>
+          </div>
+          <div class="send-btn-container">
+            <a href="<%= downloadLink %>">Download file</a>
+          </div>
+          <% } %>
+        </section>
       </div>
-      <% } %>
-    </section>
+    </div>
   </body>
 </html>

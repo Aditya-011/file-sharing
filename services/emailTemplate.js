@@ -131,7 +131,7 @@ module.exports = ({ emailFrom, downloadLink, size, expires }) => {
                                         </tr>
                                     </tbody>
                                     </table>
-                                    <p style="font-family: sans-serif; font-size: 14px; font-weight: normal; margin: 0; Margin-bottom: 15px;">Thank you for using fileShare service.</p>
+                                    <p style="font-family: sans-serif; font-size: 14px; font-weight: normal; margin: 0; Margin-bottom: 15px;">Thank you for using cloudShare service.</p>
                                     <p style="font-family: sans-serif; font-size: 14px; font-weight: normal; margin: 0; Margin-bottom: 15px;">Good luck! Hope it works.</p>
                                 </td>
                                 </tr>
@@ -148,7 +148,7 @@ module.exports = ({ emailFrom, downloadLink, size, expires }) => {
                             <tr>
                             <td class="content-block" style="font-family: sans-serif; vertical-align: top; padding-bottom: 10px; padding-top: 10px; font-size: 12px; color: #999999; text-align: center;">
                                
-                                <br> Want to share a file? <a href="http://127.0.0.1:3001/index.html" style="text-decoration: underline; color: #999999; font-size: 12px; text-align: center;">fileShare</a>.
+                                <br> Want to share a file? <a href="http://127.0.0.1:3001/index.html" style="text-decoration: underline; color: #999999; font-size: 12px; text-align: center;">cloudShare</a>.
                             </td>
                             </tr>
                             <tr>

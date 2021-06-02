@@ -105,3 +105,6 @@ body {
   height: 60vh;
   width: 60vw;
 }
+a {
+  text-decoration: none;
+}

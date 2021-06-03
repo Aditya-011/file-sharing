@@ -44,7 +44,7 @@ router.post("/send", async (req, res) => {
   console.log(`${uuid} ${emailTo} ${emailFrom}`);
   // Get data from db
   try {
-    console.log("enterd");
+    //console.log("enterd");
     const file = await File.findOne({ uuid: uuid });
     if (file.sender) {
       return res.status(422).send({ error: "Email already sent once." });
@@ -54,7 +54,7 @@ router.post("/send", async (req, res) => {
     const response = await file.save();
     // send mail
     const sendMail = require("../services/mailService");
-    console.log("enterd");
+    //console.log("enterd");
     sendMail({
       from: emailFrom,
       to: emailTo,

@@ -26,7 +26,7 @@ app.use(express.static("public"));
 const connectDB = require("./config/db");
 connectDB();
 const fetchData = require("./script");
-fetchData().then(process.exit);
+fetchData();
 app.use(express.json());
 // setting ejs as template engine
 app.set("views", path.join(__dirname, "/views"));

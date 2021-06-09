@@ -1,16 +1,21 @@
-# inShare file sharing app apis
+# RESTFUL cloudShare api
 
-Rest api using Node, Express, Mongo.
-We will build rest api for a simple file sharing app. 
+This a restful api created as backend support for cloudShare service and hosted on hereoku.
+This api store the files to database and mails the file's remote url to desired user.
 
-![demo gif](https://github.com/ShivamJoker/GIF-Demos/raw/master/inshare%20demo.gif)
+##
 
-### Frontend source code can be found on @ShivamJoker Github
-https://github.com/ShivamJoker/InShare
+```
+NPM packages used
+- cors
+- dotenv
+- ejs
+- mongoose
+- multer
+- nodemailer
+- uuid
+```
 
+## Screenshots
 
-## Installation 
-After download or clone run `npm install` OR `yarn install` to install all the dependancies.
-also do not forget to rename `.env.example` into `.env` an put all creadentials.
-
-🙏 If you find this repo helpful then don't forget to give a start ❇️ to this repository. :)
+<img src="public/images/ss.png">

@@ -1,6 +1,6 @@
 # RESTFUL cloudShare api
 
-This a restful api created as backend support for cloudShare service and hosted on hereoku.
+This a restful api created as backend support for cloudShare service.
 This api store the files to database and mails the file's remote url to desired user.
 
 ##

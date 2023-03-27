@@ -37,6 +37,7 @@ body {
 .title {
   color: #9a91ea;
   flex: 1;
+  font-size: 3.5rem;
 }
 .download {
   display: flex;

@@ -2,8 +2,11 @@
 * {
   padding: 0;
   margin: 0;
+  outline: none;
   font-family: "DM Sans", sans-serif;
 }
+
+
 body {
   display: flex;
   justify-content: center;
@@ -11,68 +14,33 @@ body {
   overflow: hidden;
   width: 100vw;
   height: 100vh;
+  /* background: #111827; */
 }
-.body {
+
+.body{
+  width: 80%;
+  height: 70%;
   display: flex;
-  align-content: center;
-  justify-content: center;
-  width: 70vw;
-  z-index: 10;
-  height: 70vh;
-  box-shadow: 10px 10px 24px -6px rgba(0, 0, 0, 0.59);
-  -webkit-box-shadow: 10px 10px 24px -6px rgba(0, 0, 0, 0.59);
-  -moz-box-shadow: 10px 10px 24px -6px rgba(0, 0, 0, 0.59);
-}
-.container {
-  padding: 1rem;
-  min-width: 70vw;
-  min-height: 70vh;
-  display: flex;
-  align-items: center;
   justify-content: space-evenly;
-  background: #ffffff;
-  border-radius: 25px;
-  flex-direction: column;
-}
-.title {
-  color: #9a91ea;
-  flex: 1;
-  font-size: 3.5rem;
-}
-.download {
-  display: flex;
-  justify-content: center;
   align-items: center;
-  flex-direction: column;
-  flex: 5;
 }
-.download__meta {
-  margin: 1rem;
-}
-.send-btn-container {
-  background: #393768;
-  color: #fff;
-  transition: 0.3s;
-  padding: 10px 15px;
-  border-radius: 10px;
-}
-.send-btn-container a {
-  font-weight: 600;
-  font-size: 1.2rem;
-  color: #fff;
-}
-.send-btn-container:hover {
-  background: #9a91ea;
-}
-.title p {
-  position: relative;
+.bodyContainer
+{
   display: flex;
-  justify-content: baseline;
-  align-items: baseline;
-  z-index: 10;
-  font-size: 2rem;
-  font-weight: 600;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
 }
+.uploadContainer
+{
+  width: 45%;
+  height: 100%;
+}
+.shareContainer
+{
+  width: 45%;
+}
+/* Your custom styles here */
 
 .blob1 img {
   position: absolute;
@@ -106,6 +74,4 @@ body {
   height: 60vh;
   width: 60vw;
 }
-a {
-  text-decoration: none;
-}
+

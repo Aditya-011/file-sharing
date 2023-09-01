@@ -14,9 +14,9 @@ let storage = multer.diskStorage({
   },
 });
 
-let upload = multer({ storage, limits: { fileSize: 1000000 * 100 } }).single(
+let upload = multer({ storage, limits: { fileSize: 1000000 * 5 } }).single(
   "myfile"
-); //100mb
+); //5mb
 
 router.post("/", (req, res) => {
   upload(req, res, async (err) => {

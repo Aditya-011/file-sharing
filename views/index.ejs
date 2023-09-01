@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>cloudShare</title>
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel=”stylesheet” href=”/css/tailwind.css” />
+
+
+  <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.css" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.js"></script>
+
+
+</head>
+
+<body class="bg-gray-900 w-full">
+  <div class="body flex flex-col justify-around items-center p-6 bg-gray-800 border border-gray-700 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+    <!-- <div class="blob1">
+            <img src="images/blob1.svg" alt="" />
+        </div>
+        <div class="blob2"><img src="images/blob2.svg" alt="" /></div>
+        <div class="blob3"><img src="images/blob3.svg" alt="" /></div>
+        <div class="blob4"><img src="images/blob4.svg" alt="" /></div> -->
+
+    <div class="title">
+      <h2 class="text-5xl text-white dark:text-white font-black ">cloudShare</h2>
+    </div>
+    <div class="w-full h-10/12 bodyContainer">
+      <div class="flex items-center justify-center uploadContainer">
+        <label for="dropzone-file" class="h-full flex flex-col items-center justify-center w-full  border-2 border-gray-700 border-dashed rounded-lg cursor-pointer bg-gray-900 dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-600 dark:border-gray-600 hover:border-gray-800 dark:hover:bg-gray-600">
+          <div class="flex flex-col items-center justify-center pt-5 pb-6">
+            <svg class="w-8 h-8 mb-4 text-gray-400 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2" />
+            </svg>
+            <p class="mb-2 text-sm text-gray-500 dark:text-gray-400"><span class="font-semibold">Click to upload</span> or drag and drop</p>
+            <p class="text-xs text-gray-500 dark:text-gray-400">Upto 5MB only</p>
+          </div>
+          <input id="dropzone-file" type="file" class="hidden" />
+        </label>
+      </div>
+      <div class="shareContainer bg-gray-900 border-gray-600 rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
+        <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
+          <h1 class="text-xl font-bold leading-tight tracking-tight text-white md:text-2xl dark:text-white">
+           Remote file link
+          </h1>
+          
+            <div class="relative">
+              
+              <input type="text" readonly id="default-search" class="block w-full p-4 pl-10 text-sm text-white border border-gray-600 rounded-lg bg-gray-700 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="" >
+              <button type="submit" class="text-white absolute right-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Copy</button>
+            </div>
+
+
+         
+          <h1 class="text-xl font-bold leading-tight tracking-tight text-white md:text-2xl dark:text-white">
+            Share file via email
+          </h1>
+          <input type="email" id="helper-text" aria-describedby="helper-text-explanation" class="bg-gray-700 border p-4 border-gray-600 text-white text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full   dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="name@flowbite.com">
+          <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Send</button>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- <div class="toast">Sample message</div> -->
+</body>
+<script src="js/index.js"></script>
+
+</html>

@@ -39,7 +39,7 @@ Before you begin, ensure you have met the following requirements:
 3. Configure the environment variables by creating a `.env` file in the root directory.
 4. Start the application:
     ``` bash
-      npm start
+      npm run dev
     ```
 ### Usage
 1. Access the application by visiting `http://localhost:3000` in your web browser.

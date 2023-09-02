@@ -13,7 +13,7 @@ async function fetchData() {
   if (files.length) {
     for (const file of files) {
       try {
-        fs.unlinkSync(file.path);
+        //fs.unlinkSync(file.path);
         await file.remove();
         console.log(`successfully deleted ${file.filename}`);
       } catch (err) {

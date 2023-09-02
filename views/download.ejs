@@ -7,16 +7,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>cloudShare</title>
     <link rel="stylesheet" href="/css/style.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.css" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.js"></script>
   </head>
 
-  <body>
-    <div class="body">
-      <div class="blob1">
-        <img src="/images/blob1.svg" alt="" />
-      </div>
-      <div class="blob2"><img src="/images/blob2.svg" alt="" /></div>
-      <div class="blob3"><img src="/images/blob3.svg" alt="" /></div>
-      <div class="blob4"><img src="/images/blob4.svg" alt="" /></div>
+  <body >
+    <div class="bg-gray-900 flex justify-center items-center" style="width: 100vw;height: 100vh;">
+     
+<div class="max-w-lg p-6 bg-gray-800 border border-gray-700 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 flex justify-around items-center flex-col">
+  <% if(locals.error){ %>
+    <h5 class="mb-2 text-2xl font-bold tracking-tight text-white dark:text-white"><%= locals.error %></h5>
+    <% } else { %>
+  <h5 class="mb-2 text-2xl font-bold tracking-tight text-white dark:text-white">Your file is ready to download</h5>
+  <p class="mb-3 font-normal text-gray-400 dark:text-gray-400"><%= fileName %></p>
+  <p class="mb-3 font-normal text-gray-400 dark:text-gray-400">Link expires in 1 hour</p>
+  <p class="mb-3 font-normal text-gray-400 dark:text-gray-400"><%= parseInt(fileSize/1024) %> KB</p>
+  <a href="<%= downloadLink %>" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+    Download file
+    <svg class="w-3.5 h-3.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
+    </svg>
+  </a>
+  <% } %>
+</div>
+<!-- 
       <div class="container">
         <div class="title"><p class="" style="font-size: 4rem">cloudShare</p></div>
         <section class="download">
@@ -24,7 +38,7 @@
           <h4 style="margin-bottom: 1rem"><%= locals.error %></h4>
           <% } else { %>
           <h2 style="margin-bottom: 2rem" ;>Your file is ready to download</h2>
-          <p>Link expires in 1 hour</p>
+          
           <div class="download__meta">
             <h3 class="filename" style="text-align: center"><%= fileName %></h3>
             <p class="filesize" style="text-align: center"></p>
@@ -36,7 +50,7 @@
           </div>
           <% } %>
         </section>
-      </div>
+      </div> -->
     </div>
   </body>
 </html>

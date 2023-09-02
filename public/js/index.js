@@ -34,7 +34,7 @@ toastContainer.style.display = 'none';
     
 
     const { file: url } = JSON.parse(res);
-    console.log(url);
+    //console.log(url);
     //sharingContainer.style.display = "block";
     document.getElementById("urlInput").value = url
 };
@@ -113,6 +113,7 @@ dropContainer.addEventListener('drop', (e) => {
     if (files[0].size > maxAllowedSize) {
         toast("Max file size is 5MB");
         fileInput.value = ""; // reset the input
+        document.getElementById("fileList").innerHTML =""
         return;
     }
     uploadFile(files);
@@ -133,6 +134,7 @@ fileInput.addEventListener('change', () => {
     if (files[0].size > maxAllowedSize) {
         toast("Max file size is 5MB");
         fileInput.value = ""; // reset the input
+        document.getElementById("fileList").innerHTML =""
         return;
     }
     uploadFile(files);
@@ -179,22 +181,7 @@ document.getElementById("sendEmailBtn").addEventListener("click", () => {
         });
 });
 
-document.getElementById("copyBtn").addEventListener('click', () => {
-    // Select the text in the input field
-    document.getElementById("urlInput").select();
 
-    try {
-        // Attempt to copy the selected text to the clipboard
-        document.execCommand('copy');
-        toast("Copied!")
-        //console.log('Text copied to clipboard: ' + document.getElementById("urlInput").value);
-    } catch (err) {
-        toast('Unable to copy text: ' + err);
-    }
-
-    // Deselect the text (optional)
-    document.getElementById("urlInput").blur();
-});
 document.getElementById("uploadAgainBtn").addEventListener('click', () => {
   document.getElementById("copyBtn").setAttribute("disabled",true);
     document.getElementById("copyBtn").classList.add("cursor-not-allowed");
@@ -207,4 +194,5 @@ document.getElementById("uploadAgainBtn").addEventListener('click', () => {
     document.getElementById("progressContainer").style.display = "none"
     document.getElementById("uploadAgainBtn").style.display = 'none'
     document.getElementById("urlInput").value = ""
+    document.getElementById("fileList").innerHTML =""
 });

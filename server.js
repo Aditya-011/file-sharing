@@ -19,7 +19,7 @@ const cors = require("cors");
 //     "optionsSuccessStatus": 204
 //   }
 
-// app.use(cors(corsOptions));
+app.use(cors());
 app.use(express.static("public"));
 
 // connection to cloud storage

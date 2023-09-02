@@ -24,7 +24,7 @@ Before you begin, ensure you have met the following requirements:
 
 - [Node.js](https://nodejs.org/) installed.
 - [MongoDB](https://www.mongodb.com/) installed and running.
-- API Key (if required for external services).
+
 ### Installation
 
 1. Clone the repository:

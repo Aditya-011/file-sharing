@@ -18,6 +18,7 @@
 </head>
 
 <body class="bg-gray-900 w-full">
+  <div class="toast-container" id="toastContainer"></div>
   <div class="body flex flex-col justify-around items-center p-6 bg-gray-800 border border-gray-700 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
     <!-- <div class="blob1">
             <img src="images/blob1.svg" alt="" />
@@ -31,13 +32,17 @@
     </div>
     <div class="w-full h-10/12 bodyContainer">
       <div class="flex items-center justify-center uploadContainer">
-        <label for="dropzone-file" class="h-full flex flex-col items-center justify-center w-full  border-2 border-gray-700 border-dashed rounded-lg cursor-pointer bg-gray-900 dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-600 dark:border-gray-600 hover:border-gray-800 dark:hover:bg-gray-600">
+        <label for="dropzone-file" id="dropContainer" class="drop-container h-full flex flex-col items-center justify-center w-full  border-2 border-gray-700 border-dashed rounded-lg cursor-pointer bg-gray-900 dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-600 dark:border-gray-600 hover:border-gray-800 dark:hover:bg-gray-600">
           <div class="flex flex-col items-center justify-center pt-5 pb-6">
             <svg class="w-8 h-8 mb-4 text-gray-400 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
               <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2" />
             </svg>
             <p class="mb-2 text-sm text-gray-500 dark:text-gray-400"><span class="font-semibold">Click to upload</span> or drag and drop</p>
             <p class="text-xs text-gray-500 dark:text-gray-400">Upto 5MB only</p>
+            <div id="fileList" class="file-list text-xs text-gray-500">
+              <!-- File list will be displayed here -->
+          </div>
+      
           </div>
           <input id="dropzone-file" type="file" class="hidden" />
         </label>
@@ -50,8 +55,8 @@
           
             <div class="relative">
               
-              <input type="text" readonly id="default-search" class="block w-full p-4 pl-10 text-sm text-white border border-gray-600 rounded-lg bg-gray-700 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="" >
-              <button type="submit" class="text-white absolute right-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Copy</button>
+              <input disabled type="text"  id="urlInput" class="block w-full p-4 pl-10 text-sm text-white border border-gray-600 rounded-lg bg-gray-700 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="" >
+              <button disabled id="copyBtn" type="submit" class="cursor-not-allowed text-white absolute right-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Copy</button>
             </div>
 
 
@@ -59,17 +64,31 @@
           <h1 class="text-xl font-bold leading-tight tracking-tight text-white md:text-2xl dark:text-white">
             Share file via email
           </h1>
-          <input type="email" id="helper-text" aria-describedby="helper-text-explanation" class="bg-gray-700 border p-4 border-gray-600 text-white text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full   dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="name@flowbite.com">
-          <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Send</button>
+          <input type="email" id="emailInput" aria-describedby="helper-text-explanation" class=" bg-gray-700 border p-4 border-gray-600 text-white text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full   dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="name@flowbite.com">
+          <button id="sendEmailBtn" disabled type="button" class="cursor-not-allowed aria-disabled:true text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Send</button>
 
         </div>
       </div>
     </div>
 
+   <div id="progressContainer" class="w-full hidden">
+    <div class="mb-1">
+      <span class="text-base font-medium text-blue-700 dark:text-white">Uploading</span>
+      <span class="text-sm font-medium text-blue-700 dark:text-white" id="progressNumber">0%</span>
+    </div>
+    <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+      <div class="bg-blue-600 h-2.5 rounded-full" id="progessBar" style="width: 0%"></div>
+    </div>
+   </div>
+   <button type="button" id="uploadAgainBtn" class="hidden text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Upload again</button>
+
   </div>
 
   <!-- <div class="toast">Sample message</div> -->
 </body>
-<script src="js/index.js"></script>
+<script>
+
+</script>
+<!-- <script src="js/index.js"></script> -->
 
 </html>

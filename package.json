@@ -5,8 +5,8 @@
   "license": "MIT",
   "scripts": {
     "build:css": "postcss tailwind.css -o public/css/tailwind.css",
-    "start": "node server.js",
-    "dev": "nodemon server.js"
+    "start": "node index.js",
+    "dev": "nodemon index.js"
   },
   "dependencies": {
     "cors": "^2.8.5",

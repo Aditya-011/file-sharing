@@ -5,8 +5,8 @@
 This is an online file-sharing application with a RESTful API. It allows users to securely upload and download files in a collaborative environment
 <br/>
 Check out the live demo of the FileShare App: [Demo](https://cloudshare-api.onrender.com)
-![Home Page Screenshot](./public/images/preview-1.png)
-![Download Page Screenshot](./public/images/preview-2.png)
+![Home Page Screenshot](./public/images/cloudShare.gif)
+
 ## Introduction
 ## Features
 
